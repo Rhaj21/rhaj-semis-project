@@ -1,0 +1,207 @@
+/*
+FALLARIA, RHAJ GENDREX F.
+BSIT - 1ST YEAR COLLEGE
+*/
+
+/* BASE & CSS VARIABLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: #1a1a2e;
+    color: #c5c6c7;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGATION  */
+header {
+    background: #16213e;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #0f3460;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #e94560;
+    border: 2px solid #e94560;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* HEADINGS & INTRO  */
+.page-title {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #e94560;
+    line-height: 1.4;
+}
+
+.intro {
+    background: #16213e;
+    padding: 20px;
+    border: 3px solid #0f3460;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.intro p {
+    text-align: left;
+    font-size: 10px;
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+/* FAVORITE WEBSITES SECTION */
+.favorites-section {
+    background: #16213e;
+    border: 3px solid #0f3460;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.helper-text {
+    font-size: 8px;
+    margin-bottom: 20px;
+    color: #8b8c8f;
+}
+
+.favorites-grid {
+    display: grid;
+    /* Auto-fit smoothly transitions columns based on screen width */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.favorite-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #1a1a2e;
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.favorite-item:hover {
+    border-color: #e94560;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(233, 69, 96, 0.2);
+}
+
+.favorite-item img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.favorite-item a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 8px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.favorite-item a:hover {
+    color: #e94560;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #16213e;
+    color: #c5c6c7;
+    font-size: 8px;
+    border-top: 3px solid #0f3460;
+    flex-shrink: 0;
+    line-height: 1.8;
+}
+
+/*  RESPONSIVE DESIGN  */
+
+/* Tablets & Smaller Laptops */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    .favorites-grid {
+        gap: 10px;
+    }
+}
+
+/* Standard Mobile Phones */
+@media (max-width: 600px) {
+    .page-title {
+        font-size: 16px;
+    }
+    .intro p {
+        font-size: 9px; 
+    }
+    /* Switch to 2 columns on standard phones instead of squeezing 3 */
+    .favorites-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .favorite-item {
+        padding: 10px;
+    }
+    .favorite-item img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+    /* Switch to 1 column so the 8-bit text stays readable */
+    .favorites-grid {
+        grid-template-columns: 1fr;
+    }
+    .intro {
+        padding: 15px;
+    }
+    .page-title {
+        font-size: 14px;
+    }
+}

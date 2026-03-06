@@ -1,0 +1,589 @@
+/*
+FALLARIA, RHAJ GENDREX F.
+BSIT - 1ST YEAR COLLEGE
+*/
+
+/* BASE & CSS VARIABLES */
+:root {
+    --bg-main: #0f0f1b;
+    --bg-nav: #0a0a0f;
+    --bg-card: #1a1a24;
+    --cyan: #00ffcc;
+    --magenta: #ff00ff;
+    --font-pixel: 'Press Start 2P', cursive;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-pixel);
+    background: var(--bg-main);
+    color: var(--cyan);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* NAVIGATION */
+header {
+    background: var(--bg-nav);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.15);
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--magenta);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 8px var(--magenta);
+}
+
+nav a:hover, nav a.active {
+    color: var(--magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.6);
+}
+
+nav a:hover::before, nav a.active::before {
+    transform: scaleX(1);
+}
+
+/* GLOBAL SECTION LAYOUT  */
+section {
+    min-height: calc(100vh - 110px); 
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--cyan);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5), inset 0 0 30px rgba(255, 0, 255, 0.2);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* HOME SECTION */
+#home {
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url(../assets/filipe-dilly-7-eleven-rain.gif) no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    pointer-events: none;
+}
+
+#home-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+#home h1 {
+    font-size: 28px;
+    margin: 0 0 25px 0;
+    line-height: 1.5;
+    color: #fff;
+    text-shadow: 0 0 10px var(--cyan), 0 0 20px var(--magenta);
+    animation: flicker 2s infinite alternate;
+}
+
+#home p {
+    font-size: 13px;
+    margin: 15px 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px black;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.7; }
+}
+
+/* ABOUT SECTION */
+#about {
+    background: transparent;
+    padding: 40px 5%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.8;
+    padding: 40px; /* Base padding for desktop */
+    background: var(--bg-card);
+    border: 4px solid var(--cyan);
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px var(--magenta);
+    position: relative;
+}
+
+.about-text::before {
+    content: '';
+    position: absolute;
+    /* Inset coordinates for desktop */
+    top: 12px; left: 12px; right: 12px; bottom: 12px;
+    border: 2px dashed rgba(0, 255, 204, 0.2);
+    pointer-events: none;
+}
+
+.about-text h2 {
+    color: var(--magenta);
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.5);
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.about-text ul {
+    margin: 15px 0;
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.about-text li {
+    margin: 10px 0;
+    color: #d4d4d4;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.about-text b {
+    color: var(--cyan);
+}
+
+.signature {
+    text-align: right;
+    color: var(--magenta) !important;
+    margin-top: 30px !important;
+    font-size: 15px;
+    text-shadow: 0 0 5px var(--magenta);
+}
+
+.about-image {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--cyan);
+    box-shadow: 10px 10px 0px var(--magenta);
+    border-radius: 8px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-image img:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* SIGN UP / LOGIN MODAL & OVERLAY */
+#modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 99998;
+}
+
+#signup-modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    background: #05050a;
+    border: 4px solid var(--cyan);
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 8px 8px 0px var(--magenta), 0 0 50px rgba(0,255,204,0.3);
+    text-align: center;
+    border-radius: 8px;
+}
+
+#signup-modal h2 {
+    color: var(--magenta);
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px var(--magenta);
+}
+
+#signup-modal input {
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 45px; 
+    line-height: 45px;
+    padding: 0 15px;
+    width: 100%;
+    border: 2px solid var(--cyan);
+    background: #000;
+    color: #ffffff;
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    transition: box-shadow 0.3s ease;
+}
+
+#signup-modal input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+
+.birthday-label {
+    display: block;
+    text-align: left;        
+    font-size: 8px;           
+    margin: 0 5px 5px 0;      
+    color: var(--cyan);
+    text-shadow: 0 0 5px var(--cyan);
+    letter-spacing: 1px;      
+}
+
+
+#birthday-input {
+    margin-top: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    color: var(--cyan);
+    background: #000;
+    cursor: pointer;
+    font-size: 10px;          
+}
+
+
+#birthday-input::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(100%) saturate(10000%) hue-rotate(150deg);
+    cursor: pointer;
+}
+
+#signup-modal button {
+    padding: 15px;
+    border: none;
+    background: var(--magenta);
+    color: white;
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 4px 4px 0px var(--cyan);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#signup-modal button:hover {
+    transform: translate(-3px, -3px) scale(1.03);
+    box-shadow: 7px 7px 0px var(--cyan);
+}
+
+#signup-modal button:active {
+    transform: translate(2px, 2px) scale(0.98);
+    box-shadow: 2px 2px 0px var(--cyan);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--magenta);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--cyan);
+    transform: scale(1.2);
+}
+
+.auth-toggle {
+    margin-top: 25px;
+    font-size: 9px;
+    color: var(--cyan);
+}
+.auth-toggle a {
+    color: var(--magenta);
+    text-decoration: none;
+    transition: text-shadow 0.3s ease;
+}
+.auth-toggle a:hover {
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+}
+
+/* FOOTER & FLOATING BUTTON */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--bg-nav);
+    color: var(--cyan);
+    font-size: 11px;
+    border-top: 2px solid rgba(0, 255, 204, 0.2);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 8px 0;
+    color: rgba(0, 255, 204, 0.7);
+}
+
+#music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #ff00ff;
+    color: white;
+    border: 3px solid #00ffcc;
+    font-family: var(--font-pixel);
+    cursor: pointer;
+    z-index: 500;
+    box-shadow: 4px 4px 0px #00ffcc, 0 0 10px #00ffcc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#music-toggle:hover {
+    transform: translate(-3px, -3px) scale(1.05);
+    box-shadow: 7px 7px 0px #00ffcc, 0 0 14px #00ffcc;
+}
+
+#music-toggle:active {
+    transform: translate(2px, 2px) scale(0.97);
+    box-shadow: 2px 2px 0px #00ffcc;
+}
+
+/*  RESPONSIVE DESIGN */
+
+/* 1. TABLETS */
+@media (max-width: 1024px) {
+    #about {
+        padding: 40px 4%;
+        gap: 30px;
+    }
+    .about-image {
+        flex: 0 0 250px;
+    }
+    .about-text {
+        padding: 30px;
+        font-size: 12px;
+    }
+    #home h1 {
+        font-size: 24px;
+    }
+}
+
+/* 2. STANDARD PHONES */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 8px 0;
+    }
+    nav {
+        gap: 8px 10px;
+    }
+    nav a {
+        font-size: 9px;
+        padding: 5px; 
+    }
+    
+    section {
+        min-height: calc(100vh - 80px);
+        height: auto; 
+        margin: 10px auto; 
+        padding: 15px 10px;
+    }
+
+    #home-content {
+        padding: 20px 15px;
+        width: 95%;
+    }
+    #home h1 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    #home p {
+        font-size: 10px; 
+    }
+
+    #about {
+        flex-direction: column-reverse;
+        gap: 20px; 
+        padding: 15px 10px;
+    }
+    
+    
+    .about-text {
+        padding: 25px 20px; 
+        font-size: 10px; 
+        line-height: 1.6; 
+        width: 100%;
+        box-shadow: 5px 5px 0px var(--magenta);
+    }
+    
+    .about-text::before {
+        top: 8px; left: 8px; right: 8px; bottom: 8px;
+    }
+    
+    .about-text h2 {
+        font-size: 16px;
+    }
+    .signature {
+        margin-top: 15px !important;
+        font-size: 11px;
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    #music-toggle {
+        font-size: 10px;
+        padding: 8px 12px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    footer {
+        padding: 20px 10px;
+    }
+}
+
+/* 3. VERY SMALL PHONES */
+@media (max-width: 400px) {
+    nav {
+        gap: 6px 8px;
+    }
+    nav a {
+        font-size: 8px; 
+    }
+    
+    #home-content {
+        padding: 15px 10px;
+    }
+    #home h1 {
+        font-size: 14px;
+    }
+    #home p {
+        font-size: 9px;
+    }
+
+    .about-text {
+        padding: 20px 15px; 
+        font-size: 8px; 
+        box-shadow: 4px 4px 0px var(--magenta);
+    }
+    .about-text h2 {
+        font-size: 13px;
+    }
+    .about-text ul {
+        padding-left: 15px;
+    }
+
+    .about-image {
+        max-width: 130px; 
+    }
+    
+    #signup-modal {
+        padding: 25px 20px;
+        width: 90%; 
+        max-width: 320px;
+    }
+    #signup-modal h2 {
+        font-size: 14px;
+    }
+    #signup-modal input {
+        height: 40px; 
+        line-height: 40px;
+        font-size: 9px;
+    }
+    #signup-modal button {
+        padding: 10px; 
+        font-size: 9px;
+    }
+}

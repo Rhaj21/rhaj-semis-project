@@ -1,0 +1,190 @@
+/*
+FALLARIA, RHAJ GENDREX F.
+BSIT - 1ST YEAR COLLEGE
+*/
+
+/* BASE & CSS VARIABLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: #1a1a2e;
+    color: #c5c6c7;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGATION  */
+header {
+    background: #16213e;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #0f3460;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #e94560;
+    border: 2px solid #e94560;
+}
+
+/* CALENDAR CONTAINER  */
+.calendar-container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #16213e;
+    border: 3px solid #0f3460;
+    border-radius: 8px;
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #c5c6c7;
+    line-height: 1.4;
+}
+
+.legend {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* CALENDAR TABLES */
+.month-section {
+    margin-bottom: 40px;
+    overflow-x: hidden;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #e94560;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 3px solid #0f3460;
+    background: #1a1a2e;
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #0f3460;
+    padding: 8px 4px;
+    text-align: center;
+    font-size: 10px;
+    height: 40px; /* Reduced since text is outside now */
+    vertical-align: middle;
+}
+
+th {
+    background: #16213e;
+    color: #e94560;
+    height: auto;
+    padding: 10px 4px;
+}
+
+td {
+    background: #1a1a2e;
+    color: #c5c6c7;
+}
+
+/* SPECIAL CLASSES  */
+.holiday {
+    color: #f4d03f;
+    background: rgba(244, 208, 63, 0.15);
+}
+
+.birthday {
+    color: #e94560;
+    background: rgba(233, 69, 96, 0.15);
+}
+
+/*  EVENT LIST (New addition) */
+.event-list {
+    margin-top: 10px;
+    padding: 15px;
+    background: #1a1a2e;
+    border: 1px dashed #0f3460;
+    text-align: left;
+    font-size: 8px;
+    line-height: 2;
+}
+
+.event-list span.yellow { color: #f4d03f; }
+.event-list span.pink { color: #e94560; }
+
+/* FOOTER  */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #16213e;
+    color: #c5c6c7;
+    font-size: 8px;
+    border-top: 3px solid #0f3460;
+    flex-shrink: 0;
+    line-height: 1.8;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 98%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 16px;
+    }
+}
+
+/* Standard Mobile Phones */
+@media (max-width: 600px) {
+    table { font-size: 8px; }
+    th { font-size: 7px; padding: 5px 2px; }
+    th, td { padding: 4px 2px; height: 35px; }
+    .legend { font-size: 8px; }
+    h2 { font-size: 14px; }
+    .event-list { font-size: 7px; padding: 10px; }
+}
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+    h1 { font-size: 12px; }
+    th { font-size: 5px; }
+    td { font-size: 7px; }
+    th, td { height: 30px; padding: 2px 1px; }
+    .event-list { font-size: 6px; padding: 8px; }
+}

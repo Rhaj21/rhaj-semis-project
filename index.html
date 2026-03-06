@@ -1,0 +1,111 @@
+<!-- FALLARIA, RHAJ GENDREX F. -->
+ <!-- BSIT - 1ST YEAR COLLEGE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhaj Fallaria - Pixel Webpage</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/index.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT ME</a>
+        <a href="activities.html">ACTIVITIES</a>
+        <a href="fav-webs.html">FAVORITE-WEBSITES</a>
+        <a href="calendar.html">CALENDAR</a>
+        <a id="signup-link" href="#signup-modal">SIGN UP</a>
+    </nav>
+</header>
+
+<!-- MUSIC BTN -->
+
+<button id="music-toggle">🎵 Music</button>
+
+<!-- HOME -->
+
+<section id="home">
+    <div id="home-content">
+        <h1>WELCOME TO RHAJ FALLARIA'S WEBPAGE</h1>
+        <p>Let's explore my projects and activities!</p>
+        <p>Hang out on my page, enjoy the pixel vibes, and check out everything I've worked on</p>
+        <p>Relax, scroll around, and discover fun surprises along the way!</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="about-text">
+        <h2>ABOUT ME</h2>
+        <p>Hi! I'm <b>Rhaj Gendrex F. Fallaria</b>, a 1st-year BSIT student at Arellano University, Pasig Campus. This website is my semi-final project for Web Design.</p>
+        <p>Here, you can:</p>
+        <ul>
+            <li>Explore my past activities and projects</li>
+            <li>Check out the calendars and favorite websites I love</li>
+            <li>Hang out and enjoy pixel-style design with neon vibes</li>
+        </ul>
+        <p>You can even play music or turn it off as you like. Just click the <b>🎵 Music</b> button in the bottom-right corner!</p>
+        <p>Relax, explore, and enjoy your time on my page. I hope it inspires you and shows my growth in web design!</p>
+        <p class="signature">- Rhaj</p>
+    </div>
+    
+    <div class="about-image">
+        <img src="assets/pixel-profile.png" alt="Rhaj Fallaria">
+    </div>
+</section>
+
+<!-- SIGN UP AND LOGIN FORM -->
+
+<div id="modal-overlay"></div>
+<div id="signup-modal">
+    <span class="close-btn">&times;</span>
+    <h2 id="modal-title">SIGN UP</h2>
+    <form id="auth-form">
+        <div id="signup-only-fields">
+            <input type="text" id="firstname-input" placeholder="FIRST NAME" required>
+            <input type="text" id="lastname-input" placeholder="LAST NAME" required>
+            <input type="text" id="username-input" placeholder="USERNAME" required>
+            
+            <label class="birthday-label">BIRTHDAY:</label>
+            <input type="date" id="birthday-input" required>
+        </div>
+
+        <input type="email" id="email-input" placeholder="EMAIL" required>
+        <input type="password" id="password-input" placeholder="PASSWORD" required>
+        
+        <button type="submit" id="auth-btn">JOIN NOW</button>
+    </form>
+    <p class="auth-toggle">
+        <span id="toggle-text">Already have an account?</span> 
+        <a href="#" id="toggle-link">Login here</a>
+    </p>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2026 Rhaj Fallaria</p>
+  <p>Made with Love and pixel vibes</p>
+</footer>
+
+<audio id="bg-music">
+    <source src="assets/sounds/bg-music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script/index.js">
+
+</script>
+
+</body>
+</html>

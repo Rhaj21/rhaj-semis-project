@@ -1,0 +1,187 @@
+/*
+FALLARIA, RHAJ GENDREX F.
+BSIT - 1ST YEAR COLLEGE
+*/
+
+/* BASE & CSS VARIABLES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: #1a1a2e;
+    color: #c5c6c7;
+    line-height: 1.6;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGATION */
+header {
+    background: #16213e;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #0f3460;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #e94560;
+    border: 2px solid #e94560;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 10px;
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #c5c6c7;
+    line-height: 1.4;
+}
+
+/* ACTIVITY SECTIONS */
+.activity-section {
+    background: #16213e;
+    border: 3px solid #0f3460;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+.activity-section h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #e94560;
+}
+
+/* ACTIVITY GRID */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.activity-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 10px;
+    background: #1a1a2e;
+    color: #c5c6c7;
+    text-decoration: none;
+    border: 2px solid #0f3460;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-size: 10px;
+    text-align: center;
+}
+
+.activity-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* CATEGORY COLORS  */
+
+/* HTML (Yellow) */
+.html-section h2 { color: #f4d03f; }
+.html-section .activity-link:hover {
+    background: #f4d03f;
+    color: #1a1a2e;
+    border-color: #f4d03f;
+}
+
+/* CSS (Pink/Red) */
+.css-section h2 { color: #e94560; }
+.css-section .activity-link:hover {
+    background: #e94560;
+    color: #1a1a2e;
+    border-color: #e94560;
+}
+
+/* JS (Silver/Blue) */
+.js-section h2 { color: #c5c6c7; }
+.js-section .activity-link:hover {
+    background: #c5c6c7;
+    color: #1a1a2e;
+    border-color: #c5c6c7;
+}
+
+/* FOOTER  */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #16213e;
+    color: #c5c6c7;
+    font-size: 8px;
+    border-top: 3px solid #0f3460;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Tablets */
+@media (max-width: 768px) {
+    h1 { font-size: 20px; }
+    .activity-section { padding: 15px; }
+    .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+/* Standard Mobile */
+@media (max-width: 600px) {
+    .activity-grid {
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+    }
+    h1 {
+        font-size: 18px;
+    }
+    .activity-section h2 {
+        font-size: 14px;
+    }
+    .activity-link {
+        font-size: 8px; /* Slightly smaller font to fit longer text */
+        padding: 15px 8px;
+    }
+    .container {
+        width: 95%;
+    }
+}
+
+/* Smallest Phones */
+@media (max-width: 400px) {
+    h1 { font-size: 16px; }
+    .activity-link {
+        font-size: 7px;
+        letter-spacing: -0.5px;
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="secret">I am a secret message!</p>
+    <button onclick="hide()">Hide</button>
+    <button onclick="show()">Show</button>
+
+    <script>
+        function hide() {
+            document.getElementById("secret").style.display = "none";
+        }
+        function show() {
+            document.getElementById("secret").style.display = "block";
+        }
+    </script>
+</body>
+</html>
