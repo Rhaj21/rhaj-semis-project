@@ -308,6 +308,11 @@ section {
     color: var(--text-muted);
 }
 
+#birthday-input {
+    appearance: auto;
+    -webkit-appearance: auto;
+    color-scheme: dark;
+}
 
 #birthday-input::-webkit-calendar-picker-indicator {
     filter: invert(1) opacity(0.8);
