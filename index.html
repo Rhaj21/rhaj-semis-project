@@ -1,49 +1,39 @@
-<!-- FALLARIA, RHAJ GENDREX F. -->
- <!-- BSIT - 1ST YEAR COLLEGE -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhaj Fallaria - Pixel Webpage</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style/index.css">
-<style>
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhaj Fallaria - Pixel Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/index.css">
+    
+    <style>
+        
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-
 <header>
     <nav>
-        <a href="#home">HOME</a>
+        <a href="#home" class="active">HOME</a>
         <a href="#about">ABOUT ME</a>
         <a href="activities.html">ACTIVITIES</a>
         <a href="fav-webs.html">FAVORITE-WEBSITES</a>
         <a href="calendar.html">CALENDAR</a>
-        <a id="signup-link" href="#signup-modal">SIGN UP</a>
+        <a id="signup-link" href="#">SIGN UP</a>
     </nav>
 </header>
 
-<!-- MUSIC BTN -->
-
-<button id="music-toggle">🎵 Music</button>
-
-<!-- HOME -->
+<button id="music-toggle"></button>
 
 <section id="home">
     <div id="home-content">
         <h1>WELCOME TO RHAJ FALLARIA'S WEBPAGE</h1>
         <p>Let's explore my projects and activities!</p>
-        <p>Hang out on my page, enjoy the pixel vibes, and check out everything I've worked on</p>
+        <p>Hang out on my page, enjoy the pixel vibes, and check out everything I've worked on.</p>
         <p>Relax, scroll around, and discover fun surprises along the way!</p>
     </div>
 </section>
-
-<!-- ABOUT -->
 
 <section id="about">
     <div class="about-text">
@@ -53,7 +43,7 @@
         <ul>
             <li>Explore my past activities and projects</li>
             <li>Check out the calendars and favorite websites I love</li>
-            <li>Hang out and enjoy pixel-style design with neon vibes</li>
+            <li>Hang out and enjoy pixel-style design with twilight vibes</li>
         </ul>
         <p>You can even play music or turn it off as you like. Just click the <b>🎵 Music</b> button in the bottom-right corner!</p>
         <p>Relax, explore, and enjoy your time on my page. I hope it inspires you and shows my growth in web design!</p>
@@ -65,8 +55,6 @@
     </div>
 </section>
 
-<!-- SIGN UP AND LOGIN FORM -->
-
 <div id="modal-overlay"></div>
 <div id="signup-modal">
     <span class="close-btn">&times;</span>
@@ -77,7 +65,7 @@
             <input type="text" id="lastname-input" placeholder="LAST NAME" required>
             <input type="text" id="username-input" placeholder="USERNAME" required>
             
-            <label class="birthday-label">BIRTHDAY:</label>
+            <label class="birthday-label">BIRTHDAY:</label></div>
             <input type="date" id="birthday-input" required>
         </div>
 
@@ -92,10 +80,8 @@
     </p>
 </div>
 
-<!-- FOOTER -->
-
 <footer>
-  <p>© 2026 Rhaj Fallaria</p>
+    <p>© 2026 Rhaj Fallaria</p>
   <p>Made with Love and pixel vibes</p>
 </footer>
 
@@ -103,8 +89,10 @@
     <source src="assets/sounds/bg-music.mp3" type="audio/mpeg">
 </audio>
 
-<script src="script/index.js">
+<script src="script/index.js"></script>
 
+<script>
+    
 </script>
 
 </body>

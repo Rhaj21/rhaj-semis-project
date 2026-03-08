@@ -80,17 +80,16 @@ signupModal.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 
-// MUSIC TOGGLE
 const audio = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-toggle');
 
 musicBtn.addEventListener('click', () => {
-    if(audio.paused){
+    if (audio.paused) {
         audio.play().catch(error => console.log("Audio play failed:", error));
-        musicBtn.textContent = "🔇 Music";
+        musicBtn.classList.add('active');
     } else {
         audio.pause();
-        musicBtn.textContent = "🎵 Music";
+        musicBtn.classList.remove('active');
     }
 });
 

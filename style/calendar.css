@@ -3,7 +3,19 @@ FALLARIA, RHAJ GENDREX F.
 BSIT - 1ST YEAR COLLEGE
 */
 
-/* BASE & CSS VARIABLES */
+:root {
+    --bg-twilight: #131521;      
+    --bg-nav: rgba(19, 21, 33, 0.95); 
+    --bg-card: rgba(28, 31, 46, 0.85); 
+    --accent-leaf: #6b9e68;      
+    --accent-wood: #b86e42;      
+    --accent-bulb: #d4b84a;   
+    --text-primary: #e0e0e0;     
+    --text-muted: #9aa0a6;       
+    --font-heading: 'Press Start 2P', monospace;
+    --font-body: 'VT323', monospace;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,69 +23,78 @@ BSIT - 1ST YEAR COLLEGE
 }
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background: #1a1a2e;
-    color: #c5c6c7;
+    font-family: var(--font-body);
+    background: var(--bg-twilight);
+    color: var(--text-primary);
     line-height: 1.6;
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 22px; 
 }
 
-/* NAVIGATION  */
+/* NAVIGATION */
 header {
-    background: #16213e;
+    background: var(--bg-nav);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 3px solid #0f3460;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 nav {
     display: inline-block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav a {
-    color: #c5c6c7;
+    color: var(--text-muted);
     text-decoration: none;
-    font-size: 12px;
+    font-family: var(--font-heading);
+    font-size: 11px;
     transition: 0.3s;
     padding: 5px 15px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 
 nav a:hover {
-    color: #e94560;
-    border: 2px solid #e94560;
+    color: var(--accent-bulb);
+    border: 1px solid var(--accent-bulb);
 }
 
-/* CALENDAR CONTAINER  */
+/* CALENDAR CONTAINER */
 .calendar-container {
-    width: 95%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #16213e;
-    border: 3px solid #0f3460;
-    border-radius: 8px;
+    width: 92%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 3px solid var(--accent-leaf);
+    border-radius: 12px;
     flex: 1;
 }
 
 h1 {
     text-align: center;
+    font-family: var(--font-heading);
     font-size: 20px;
     margin-bottom: 20px;
-    color: #c5c6c7;
+    color: var(--accent-leaf);
     line-height: 1.4;
 }
 
 .legend {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 10px;
+    font-size: 18px;
     line-height: 1.8;
+    color: var(--text-muted);
 }
 
 /* CALENDAR TABLES */
@@ -84,107 +105,230 @@ h1 {
 
 h2 {
     text-align: center;
+    font-family: var(--font-heading);
     font-size: 16px;
     margin-top: 30px;
     margin-bottom: 15px;
-    color: #e94560;
+    color: var(--accent-bulb);
 }
 
 table {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-    border: 3px solid #0f3460;
-    background: #1a1a2e;
+    border: 2px solid var(--accent-wood);
+    background: rgba(19, 21, 33, 0.6);
     margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #0f3460;
+    border: 1px solid rgba(129, 199, 132, 0.3);
     padding: 8px 4px;
     text-align: center;
-    font-size: 10px;
-    height: 40px; /* Reduced since text is outside now */
+    font-size: 18px;
+    height: 40px;
     vertical-align: middle;
 }
 
 th {
-    background: #16213e;
-    color: #e94560;
+    background: rgba(129, 199, 132, 0.2);
+    color: var(--accent-leaf);
     height: auto;
     padding: 10px 4px;
+    font-family: var(--font-heading);
+    font-size: 10px;
 }
 
 td {
-    background: #1a1a2e;
-    color: #c5c6c7;
+    background: rgba(19, 21, 33, 0.6);
+    color: var(--text-primary);
 }
 
-/* SPECIAL CLASSES  */
+/* SPECIAL CLASSES */
 .holiday {
-    color: #f4d03f;
-    background: rgba(244, 208, 63, 0.15);
+    color: var(--accent-bulb);
+    background: rgba(212, 184, 74, 0.15);
+    font-weight: bold;
 }
 
 .birthday {
-    color: #e94560;
-    background: rgba(233, 69, 96, 0.15);
+    color: var(--accent-leaf);
+    background: rgba(107, 158, 104, 0.15);
+    font-weight: bold;
 }
 
-/*  EVENT LIST (New addition) */
+/* EVENT LIST */
 .event-list {
     margin-top: 10px;
     padding: 15px;
-    background: #1a1a2e;
-    border: 1px dashed #0f3460;
+    background: rgba(19, 21, 33, 0.6);
+    border: 1px dashed var(--accent-wood);
     text-align: left;
-    font-size: 8px;
+    font-size: 16px;
     line-height: 2;
+    border-radius: 8px;
 }
 
-.event-list span.yellow { color: #f4d03f; }
-.event-list span.pink { color: #e94560; }
+.event-list span.yellow { color: var(--accent-bulb); }
+.event-list span.pink { color: var(--accent-leaf); }
 
-/* FOOTER  */
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #16213e;
-    color: #c5c6c7;
-    font-size: 8px;
-    border-top: 3px solid #0f3460;
+    padding: 30px 20px;
+    background: var(--bg-nav);
+    color: var(--text-muted);
+    font-size: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
     line-height: 1.8;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* RESPONSIVE BREAKPOINTS */
 
 /* Tablets */
 @media (max-width: 768px) {
     .calendar-container {
-        width: 98%;
-        padding: 15px;
+        width: 95%;
+        padding: 20px;
+        margin: 30px auto;
     }
+    
     h1 {
+        font-size: 18px;
+    }
+    
+    table {
         font-size: 16px;
+    }
+    
+    th, td {
+        padding: 6px 3px;
+        height: 35px;
+    }
+    
+    .event-list {
+        font-size: 14px;
+        padding: 12px;
     }
 }
 
 /* Standard Mobile Phones */
 @media (max-width: 600px) {
-    table { font-size: 8px; }
-    th { font-size: 7px; padding: 5px 2px; }
-    th, td { padding: 4px 2px; height: 35px; }
-    .legend { font-size: 8px; }
-    h2 { font-size: 14px; }
-    .event-list { font-size: 7px; padding: 10px; }
+    body {
+        font-size: 18px;
+    }
+
+    nav {
+        padding: 0 15px;
+    }
+    
+    nav a {
+        font-size: 9px;
+        padding: 5px 10px;
+        line-height: 2.2;
+    }
+
+    .calendar-container {
+        width: 96%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+    
+    .legend {
+        font-size: 16px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+    
+    th {
+        font-size: 8px;
+        padding: 8px 2px;
+    }
+    
+    th, td {
+        padding: 4px 2px;
+        height: 30px;
+    }
+    
+    .event-list {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 14px;
+    }
+    
+    footer {
+        padding: 20px 15px;
+        font-size: 16px;
+    }
 }
 
 /* Very Small Phones */
 @media (max-width: 400px) {
-    h1 { font-size: 12px; }
-    th { font-size: 5px; }
-    td { font-size: 7px; }
-    th, td { height: 30px; padding: 2px 1px; }
-    .event-list { font-size: 6px; padding: 8px; }
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        padding: 0 10px;
+    }
+    
+    nav a {
+        font-size: 8px;
+        padding: 4px 8px;
+        line-height: 2.5;
+    }
+
+    .calendar-container {
+        width: 98%;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 14px;
+    }
+    
+    .legend {
+        font-size: 14px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+    
+    th {
+        font-size: 6px;
+        padding: 6px 1px;
+    }
+    
+    th, td {
+        padding: 3px 1px;
+        height: 25px;
+    }
+    
+    .event-list {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    h2 {
+        font-size: 12px;
+    }
+    
+    footer {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
 }

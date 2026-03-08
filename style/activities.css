@@ -3,7 +3,19 @@ FALLARIA, RHAJ GENDREX F.
 BSIT - 1ST YEAR COLLEGE
 */
 
-/* BASE & CSS VARIABLES */
+:root {
+    --bg-twilight: #131521;      
+    --bg-nav: rgba(19, 21, 33, 0.95); 
+    --bg-card: rgba(28, 31, 46, 0.85); 
+    --accent-leaf: #6b9e68;      
+    --accent-wood: #b86e42;      
+    --accent-bulb: #d4b84a;      
+    --text-primary: #e0e0e0;     
+    --text-muted: #9aa0a6;       
+    --font-heading: 'Press Start 2P', monospace;
+    --font-body: 'VT323', monospace;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,82 +23,93 @@ BSIT - 1ST YEAR COLLEGE
 }
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background: #1a1a2e;
-    color: #c5c6c7;
+    font-family: var(--font-body);
+    background: var(--bg-twilight);
+    color: var(--text-primary);
     line-height: 1.6;
     text-align: center;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 22px; 
 }
 
 /* NAVIGATION */
 header {
-    background: #16213e;
+    background: var(--bg-nav);
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 3px solid #0f3460;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
 }
 
 nav {
     display: inline-block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav a {
-    color: #c5c6c7;
+    color: var(--text-muted);
     text-decoration: none;
-    font-size: 12px;
+    font-family: var(--font-heading);
+    font-size: 11px;
     transition: 0.3s;
     padding: 5px 15px;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
 }
 
 nav a:hover {
-    color: #e94560;
-    border: 2px solid #e94560;
+    color: var(--accent-bulb);
+    border: 1px solid var(--accent-bulb);
 }
 
 /* MAIN CONTAINER */
 .container {
-    width: 90%;
+    width: 92%;
     max-width: 1100px;
-    margin: 20px auto;
-    padding: 10px;
+    margin: 40px auto;
+    padding: 20px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 h1 {
     text-align: center;
+    font-family: var(--font-heading);
     font-size: 24px;
     margin-bottom: 30px;
-    color: #c5c6c7;
+    color: var(--accent-leaf);
     line-height: 1.4;
 }
 
 /* ACTIVITY SECTIONS */
 .activity-section {
-    background: #16213e;
-    border: 3px solid #0f3460;
-    border-radius: 8px;
-    padding: 25px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
     margin-bottom: 40px;
 }
 
 .activity-section h2 {
     text-align: center;
+    font-family: var(--font-heading);
     font-size: 18px;
     margin-bottom: 25px;
-    color: #e94560;
+    color: var(--accent-bulb);
 }
 
 /* ACTIVITY GRID */
 .activity-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 15px;
+    gap: 20px;
 }
 
 .activity-link {
@@ -94,94 +117,181 @@ h1 {
     align-items: center;
     justify-content: center;
     padding: 18px 10px;
-    background: #1a1a2e;
-    color: #c5c6c7;
+    background: rgba(19, 21, 33, 0.6);
+    color: var(--text-primary);
     text-decoration: none;
-    border: 2px solid #0f3460;
+    border: 1px solid var(--accent-wood);
     border-radius: 8px;
     transition: 0.3s ease;
+    font-family: var(--font-heading);
     font-size: 10px;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 .activity-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-leaf);
 }
 
-/* CATEGORY COLORS  */
 
-/* HTML (Yellow) */
-.html-section h2 { color: #f4d03f; }
+
+.html-section h2 { color: var(--accent-bulb); }
 .html-section .activity-link:hover {
-    background: #f4d03f;
-    color: #1a1a2e;
-    border-color: #f4d03f;
+    background: rgba(212, 184, 74, 0.15);
+    color: var(--accent-bulb);
+    border-color: var(--accent-bulb);
 }
 
-/* CSS (Pink/Red) */
-.css-section h2 { color: #e94560; }
+
+.css-section h2 { color: var(--accent-wood); }
 .css-section .activity-link:hover {
-    background: #e94560;
-    color: #1a1a2e;
-    border-color: #e94560;
+    background: rgba(184, 110, 66, 0.15);
+    color: var(--accent-wood);
+    border-color: var(--accent-wood);
 }
 
-/* JS (Silver/Blue) */
-.js-section h2 { color: #c5c6c7; }
+.js-section h2 { color: var(--accent-leaf); }
 .js-section .activity-link:hover {
-    background: #c5c6c7;
-    color: #1a1a2e;
-    border-color: #c5c6c7;
+    background: rgba(107, 158, 104, 0.15);
+    color: var(--accent-leaf);
+    border-color: var(--accent-leaf);
 }
 
-/* FOOTER  */
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 20px;
-    background: #16213e;
-    color: #c5c6c7;
-    font-size: 8px;
-    border-top: 3px solid #0f3460;
+    padding: 30px 20px;
+    background: var(--bg-nav);
+    color: var(--text-muted);
+    font-size: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-shrink: 0;
+    line-height: 1.8;
 }
 
-/* RESPONSIVE MEDIA QUERIES */
+/* RESPONSIVE BREAKPOINTS */
 
 /* Tablets */
 @media (max-width: 768px) {
-    h1 { font-size: 20px; }
-    .activity-section { padding: 15px; }
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 30px auto;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .activity-section {
+        padding: 25px;
+    }
+    
     .activity-grid {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+    
+    .activity-link {
+        font-size: 11px;
+        padding: 15px 10px;
     }
 }
 
-/* Standard Mobile */
+/* Standard Mobile Phones */
 @media (max-width: 600px) {
-    .activity-grid {
-        grid-template-columns: 1fr; /* Stack buttons vertically */
+    body {
+        font-size: 18px;
     }
+
+    nav {
+        padding: 0 15px;
+    }
+    
+    nav a {
+        font-size: 9px;
+        padding: 5px 10px;
+        line-height: 2.2;
+    }
+
+    .container {
+        width: 96%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
     h1 {
         font-size: 18px;
     }
-    .activity-section h2 {
-        font-size: 14px;
+    
+    .activity-section {
+        padding: 20px;
     }
+    
+    .activity-section h2 {
+        font-size: 16px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr; /* Stack buttons vertically */
+        gap: 15px;
+    }
+    
     .activity-link {
-        font-size: 8px; /* Slightly smaller font to fit longer text */
+        font-size: 10px;
         padding: 15px 8px;
     }
-    .container {
-        width: 95%;
+    
+    footer {
+        padding: 20px 15px;
+        font-size: 16px;
     }
 }
 
-/* Smallest Phones */
+/* Very Small Phones */
 @media (max-width: 400px) {
-    h1 { font-size: 16px; }
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        padding: 0 10px;
+    }
+    
+    nav a {
+        font-size: 8px;
+        padding: 4px 8px;
+        line-height: 2.5;
+    }
+
+    .container {
+        width: 98%;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+    
+    .activity-section {
+        padding: 15px;
+    }
+    
+    .activity-section h2 {
+        font-size: 14px;
+    }
+
     .activity-link {
-        font-size: 7px;
-        letter-spacing: -0.5px;
+        font-size: 9px;
+        letter-spacing: 0px;
+        padding: 12px 6px;
+    }
+    
+    footer {
+        padding: 15px 10px;
+        font-size: 14px;
     }
 }
