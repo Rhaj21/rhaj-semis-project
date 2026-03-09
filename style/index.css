@@ -88,7 +88,7 @@ nav a::after {
     box-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
 }
 
-/* UPDATED FEATURE: Use @media hover so tap actions don't get sticky on mobile */
+/* Use @media hover so tap actions don't get sticky on mobile */
 @media (hover: hover) {
     nav a:hover {
         color: var(--accent-bulb);
