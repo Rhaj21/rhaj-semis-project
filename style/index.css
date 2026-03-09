@@ -307,22 +307,27 @@ section {
 #signup-modal input {
     display: block;
     margin: 0 auto 15px auto;
-    height: 48px; 
+    height: 48px;
     padding: 0 15px;
     width: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.4);
     color: var(--text-primary);
     font-family: var(--font-body);
     font-size: 22px;
     border-radius: 6px;
-    transition: border-color 0.3s ease, background 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
+/* stronger hover */
+#signup-modal input:hover {
+    border-color: rgba(129, 199, 132, 0.5);
+}
+
+/* focus while typing */
 #signup-modal input:focus {
     outline: none;
-    border-color: var(--accent-bulb);
-    background: rgba(0, 0, 0, 0.6);
+    border-color: var(--accent-leaf);
 }
 
 
