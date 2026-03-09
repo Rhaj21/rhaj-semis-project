@@ -319,12 +319,10 @@ section {
     transition: border-color 0.2s ease;
 }
 
-/* stronger hover */
 #signup-modal input:hover {
     border-color: rgba(129, 199, 132, 0.5);
 }
 
-/* focus while typing */
 #signup-modal input:focus {
     outline: none;
     border-color: var(--accent-leaf);
