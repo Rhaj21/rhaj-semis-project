@@ -88,12 +88,24 @@ nav a::after {
     box-shadow: 0 0 8px rgba(255, 213, 79, 0.6);
 }
 
-nav a:hover, nav a.active {
+/* UPDATED FEATURE: Use @media hover so tap actions don't get sticky on mobile */
+@media (hover: hover) {
+    nav a:hover {
+        color: var(--accent-bulb);
+        text-shadow: 0 0 10px rgba(255, 213, 79, 0.5);
+    }
+    nav a:hover::after {
+        width: 100%;
+        left: 0;
+    }
+}
+
+nav a.active {
     color: var(--accent-bulb);
     text-shadow: 0 0 10px rgba(255, 213, 79, 0.5);
 }
 
-nav a:hover::after, nav a.active::after {
+nav a.active::after {
     width: 100%;
     left: 0;
 }
@@ -300,6 +312,37 @@ section {
     background: rgba(0, 0, 0, 0.6);
 }
 
+/* NEW FEATURE: Password Container Styling with Icon */
+.password-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 15px auto;
+}
+
+.password-container input {
+    margin: 0 !important;
+    padding-right: 50px !important; /* Leave space for the icon toggle */
+}
+
+#toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-muted); /* Keeps the same base color as the calendar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Swapped color transition for opacity transition */
+    transition: opacity 0.3s ease; 
+}
+
+#toggle-password:hover {
+    /* Uses the exact same opacity drop as the calendar icon hover */
+    opacity: 0.8; 
+}
+
 .birthday-label {
     display: block;
     text-align: left;        
@@ -308,15 +351,34 @@ section {
     color: var(--text-muted);
 }
 
+/* UPDATED FEATURE: Custom Pixel Art Calendar Icon for Mobile & Desktop */
+
 #birthday-input {
-    appearance: auto;
-    -webkit-appearance: auto;
-    color-scheme: dark;
+    position: relative;
+    padding-right: 15px; 
+    /* Changed from --text-primary to --text-muted to dim the text */
+    color: var(--text-muted); 
 }
 
+/* This targets the browser's default calendar icon and replaces it with your SVG */
 #birthday-input::-webkit-calendar-picker-indicator {
-    filter: invert(1) opacity(0.8);
+    /* Changed fill from %23ffd54f (yellow) to %23abb2bf (muted gray) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23abb2bf"><path d="M19 4h-3V2h-2v2h-4V2H8v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    /* Ensure it is fully visible and clickable */
+    opacity: 1; 
     cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+/* Add a hover effect so users know it's interactive (Optional but nice for desktop) */
+#birthday-input::-webkit-calendar-picker-indicator:hover {
+    opacity: 0.8;
 }
 
 
@@ -398,6 +460,7 @@ footer {
     transition: all 0.4s ease;
 }
 
+/* UPDATED FEATURE: Pixel Art Music Note Icon */
 #music-toggle::after {
     content: '';
     position: absolute;
@@ -406,11 +469,14 @@ footer {
     background-color: var(--text-muted);
     border-radius: 50%;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* New 8-bit blocky music note path */
+    /* NEW: Pixelated version of your specific note shape */
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E");
+
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z'/%3E%3C/svg%3E");
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
     -webkit-mask-position: center; mask-position: center;
-    -webkit-mask-size: 70%; mask-size: 70%;
+    -webkit-mask-size: 65%; mask-size: 65%;
 }
 
 #music-toggle::before {
